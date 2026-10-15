@@ -1,0 +1,16 @@
+﻿import React from "react";
+import { assets } from "../assets/assets";
+import { Link } from "react-router-dom";
+const sections = [
+ { title: "Find the Right Doctor", desc: "Search doctors by specialty and find the right expertise for your health needs.", img: assets.doc28, reverse: false },
+ { title: "Book in a Few Simple Steps", desc: "Choose a date and time that works for you, then confirm your visit online.", img: assets.appointment, reverse: true },
+ { title: "Care You Can Trust", desc: "Get to know your doctor and their experience before you book your appointment.", img: assets.doc32, reverse: false },
+ { title: "Designed Around You", desc: "Keep your appointments together and manage your care from one convenient place.", img: assets.patient, reverse: true },
+];
+const About = () => <main className="bg-[#f8fbfa]">
+ <section className="relative grid min-h-[430px] place-items-center overflow-hidden bg-[#e9f5ef] px-5 py-16 text-center"><div className="absolute -right-24 -top-40 h-[30rem] w-[30rem] rounded-full bg-[#d5ebe0]"/><div className="relative max-w-3xl"><span className="text-xs font-bold uppercase tracking-[.18em] text-[#38866d]">About DocBooking</span><h1 className="mt-4 text-4xl font-extrabold leading-tight text-[#173b35] sm:text-5xl">Healthcare made easier, so you can focus on feeling better.</h1><p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#617872]">We connect patients with trusted doctors and make it simple to arrange the care they need.</p><Link to="/doctors" className="mt-7 inline-flex rounded-full bg-[#267b66] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#267b66]/20">Meet our doctors →</Link></div></section>
+ <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-12"><div className="mx-auto mb-14 max-w-2xl text-center"><span className="text-xs font-bold uppercase tracking-[.18em] text-[#38866d]">How we help</span><h2 className="mt-3 text-3xl font-extrabold text-[#183d35]">Care, at every step</h2><p className="mt-3 leading-7 text-[#71847e]">From the first search to your confirmed visit, we keep the experience straightforward.</p></div><div className="space-y-16">{sections.map((item, i) => <article key={item.title} className={`grid items-center gap-8 md:grid-cols-2 md:gap-14 ${item.reverse ? 'md:[&>div:first-child]:order-2' : ''}`}><img src={item.img} alt="" className="h-64 w-full rounded-[1.75rem] object-cover shadow-lg shadow-[#264b39]/10 sm:h-80"/><div><span className="text-sm font-bold text-[#56a080]">0{i+1} / 04</span><h3 className="mt-3 text-2xl font-bold text-[#1b4036] sm:text-3xl">{item.title}</h3><p className="mt-4 max-w-lg leading-7 text-[#71847e]">{item.desc}</p><Link to="/doctors" className="mt-6 inline-block text-sm font-bold text-[#267b66]">Explore doctors →</Link></div></article>)}</div></section>
+ <section className="mx-5 mb-16 rounded-[2rem] bg-[#1f6d59] px-6 py-12 text-center text-white sm:mx-8 sm:px-10"><h2 className="text-3xl font-bold">Your next step to better care</h2><p className="mt-3 text-[#d0e8dd]">Find a specialist and book your appointment online.</p><Link to="/doctors" className="mt-6 inline-flex rounded-full bg-white px-7 py-3 font-bold text-[#267b66]">Find a doctor</Link></section>
+ </main>;
+export default About;
+
