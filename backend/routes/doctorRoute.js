@@ -1,5 +1,5 @@
 import express from 'express'
-import { doctorList,loginDoctor,appointmentsDoctor,appointmentComplete,appointmentCancel,doctorDashboard,doctorProfile,updateDoctorProfile, doctorForgotPassword, doctorResetPassword } from '../controller/doctorcontroller.js'
+import { doctorList,loginDoctor,appointmentsDoctor,appointmentComplete,appointmentCancel,doctorDashboard,doctorProfile,updateDoctorProfile, doctorForgotPassword, doctorResetPassword } from '../controller/doctorController.js'
 import authDoctor from '../middlewares/authDoctor.js'
 
 const doctorRouter=express.Router()
