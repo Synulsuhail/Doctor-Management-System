@@ -4,6 +4,7 @@ import axios from "axios";
 
 const ResetPassword = () => {
 
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const [form, setForm] = useState({
     email: "",
     otp: "",
@@ -22,7 +23,7 @@ const ResetPassword = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/user/reset-password",
+        `${backendUrl}/api/user/reset-password`,
         form
       );
 
@@ -99,4 +100,3 @@ const ResetPassword = () => {
 };
 
 export default ResetPassword;
-

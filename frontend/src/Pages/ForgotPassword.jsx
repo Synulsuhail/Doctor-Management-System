@@ -7,6 +7,7 @@ const ForgotPassword = () => {
 
   const [email,setEmail] = useState("");
   const [loading,setLoading] = useState(false);
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   const navigate = useNavigate(); 
 
@@ -17,7 +18,7 @@ const ForgotPassword = () => {
       setLoading(true);
 
       const { data } = await axios.post(
-        "http://localhost:4000/api/user/forgot-password",
+        `${backendUrl}/api/user/forgot-password`,
         { email }
       );
 
@@ -64,4 +65,3 @@ const ForgotPassword = () => {
 };
 
 export default ForgotPassword;
-
